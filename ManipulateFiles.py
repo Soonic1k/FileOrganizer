@@ -7,14 +7,16 @@ class ManipulateFiles:
 
     def listFiles(self):
         files_list = list()
-        for files in os.scandir(self.folder):
+        path = os.scandir(self.folder)
+        for files in path:
             if files.is_file():
                     files_list.append(files.name)
         return files_list
  
     def listSubfolders(self):
         files_list = list()
-        for files in os.scandir(self.folder):
+        path = os.scandir(self.folder)
+        for files in path:
             if not files.is_file():
                     files_list.append(files.name)
         return files_list
