@@ -3,7 +3,6 @@ import os
 class ManipulateFiles:
     def __init__(self, folder):
         self.folder = folder
-        #transformar as listas em variáreis e declará-las Null no construtor
 
     def listFiles(self):
         files_list = list()
