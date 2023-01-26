@@ -20,8 +20,19 @@ class ManipulateFiles:
                     files_list.append(files.name)
         return files_list
 
-    def creatSubfolders(self):
-        pass
+    def createSubfolders(self, destination):
+        path = os.scandir(self.folder)
+        has_subfolder = False
 
-    def moveFiles(self, destination):
-        pass
+        for files in path:
+            if files == destination:
+                has_subfolder = True
+        
+        if(not has_subfolder):
+            os.mkdir(f"test/{destination}")
+
+        return
+
+    def moveFiles(self, file, destination):
+        os.rename(f"test/{file}", f"test/{destination}/{file}")
+        return    
