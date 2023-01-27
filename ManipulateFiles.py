@@ -29,10 +29,10 @@ class ManipulateFiles:
                 has_subfolder = True
         
         if(not has_subfolder):
-            os.mkdir(f"test/{destination}")
+            os.mkdir(f"{destination}")
 
         return
 
     def moveFiles(self, file, destination):
-        os.rename(f"test/{file}", f"test/{destination}/{file}")
+        os.rename(f"{file}", f"{destination}/{file}")
         return    
