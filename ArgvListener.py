@@ -1,18 +1,15 @@
-
-
+import re
 
 class ArgvListener():
     def __init__(self):
         pass
 
     def Listener(path):
-        print("log")
-        resultPath = path[1]
-        fix = True
 
-        if(path[2] == "Prefix"):
-            resultPath[2] = True
-        elif(path[2] == "Suffix"):
-            resultPath[2] = False
+        path[1] = re.sub(r"\\", "/", path[1])
+        if(path[1] == "Prefix"):
+            path[1] = True
+        elif(path[1] == "Suffix"):
+            path[1] = False
                 
-        return resultPath
+        return path
