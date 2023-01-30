@@ -6,13 +6,10 @@ class CreateFolderList:
 
     def folderList(list, prefix_suffix):
         
-        folder_list = []
-
-        pattern = r"(?P<prefix>_(.*))(?P<suffix>(.*)_)"
-        
+        folder_list = []        
 
         if(prefix_suffix):
-            pattern = r"_(.*)"
+            pattern = r"(?<=.{5})_(.*)"
         else:
             pattern = r"(.*)_"
             extension = r"\.(.*)$"
