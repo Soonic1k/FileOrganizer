@@ -13,19 +13,19 @@ class ManipulateFiles:
         return files_list
  
     def listSubfolders(path):
-        files_list = []
+        subfolders_list = []
         path = os.scandir(path)
-        for files in path:
-            if not files.is_file():
-                    files_list.append(files.name)
-        return files_list
+        for subfolders in path:
+            if not subfolders.is_file():
+                    subfolders_list.append(subfolders.name)
+        return subfolders_list
 
     def createSubfolders(path, destination):
-        #fullPath = os.scandir(path)
-        has_subfolder = False
+        has_subfolder = False        
+        subfolders = ManipulateFiles.listSubfolders(path)
 
-        for files in path:
-            if files == destination:
+        for objects in subfolders:            
+            if objects == destination:
                 has_subfolder = True
                 
         if(not has_subfolder):
